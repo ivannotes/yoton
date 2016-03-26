@@ -4,6 +4,9 @@ import cPickle
 from .connections import SimpleConnectionFactory
 
 
+__version__ = "0.1.0"
+
+
 class YoTon(object):
     """A cache util which can simplify cache with a decorator.
     Basic Usage:
