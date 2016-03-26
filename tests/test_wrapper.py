@@ -1,5 +1,5 @@
 from unittest import TestCase, main
-import cPickle
+import pickle
 
 from mock import patch
 from redis import Redis
@@ -136,7 +136,7 @@ class CacheWrapperTest(TestCase):
         return_val = function_call_with_decorator(1, 3, 5)
         self.assertEqual(return_val, "hello")
         data = self.redis.get("test_decorator_1_3_5")
-        data_in_cache = cPickle.loads(data)
+        data_in_cache = pickle.loads(data)
         self.assertEqual(data_in_cache, "hello")
         ttl = self.redis.ttl("test_decorator_1_3_5")
         self.assertTrue(0 < ttl <= 60)
@@ -162,7 +162,7 @@ class CacheWrapperTest(TestCase):
         direct_return_val = function_call_with_decorator.refresh_cache(1, 3, 5)
         self.assertEqual(direct_return_val, "hello again")
         data = self.redis.get("test_decorator_1_3_5")
-        value = cPickle.loads(data)
+        value = pickle.loads(data)
         self.assertEqual(value, "hello again")
         ttl = self.redis.ttl("test_decorator_1_3_5")
         self.assertTrue(0 < ttl <= 60)
@@ -199,7 +199,7 @@ class CacheWrapperTest(TestCase):
         result = wrapped_func(1, 2, 3)
         self.assertEqual(result, 6)
         data = self.second_redis.get("test_1_2_3")
-        value = cPickle.loads(data)
+        value = pickle.loads(data)
         self.assertEqual(value, 6)
 
 
