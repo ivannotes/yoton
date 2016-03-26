@@ -6,6 +6,13 @@ YoTon
 
 YoTon is an util for cache, it simplifier cache with a decorator.
 
+Install
+---------------------
+
+.. code-block:: bash
+
+    $ pip install yoton
+
 Configuration
 ----------------------
 
