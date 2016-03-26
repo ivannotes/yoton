@@ -1,5 +1,5 @@
 import inspect
-import cPickle
+import pickle
 
 from .connections import SimpleConnectionFactory
 
@@ -33,7 +33,7 @@ class YoTon(object):
 
     def __init__(self, cache_servers,
                  connection_factory_cls=SimpleConnectionFactory,
-                 serializer=cPickle):
+                 serializer=pickle):
         """Initializer
 
         :param cache_servers: a dict of cache server config, the key of this
