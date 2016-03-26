@@ -4,7 +4,7 @@ YoTon
 .. image:: https://travis-ci.org/ivannotes/yoton.svg?branch=master
     :target: https://travis-ci.org/ivannotes/yoton
 
-YoTon is an util for cache, it simplifier cache with a decorator.
+YoTon is an util for cache, it simplifies cache with a decorator.
 
 Install
 ---------------------
